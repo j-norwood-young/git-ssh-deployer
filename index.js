@@ -27,4 +27,4 @@ const httpServer = (req, res) => {
 
 const app = http.createServer(httpServer);
 
-app.listen(3000);
+app.listen(config.port);
