@@ -1,7 +1,10 @@
 {
     "port": 3000,
     "servers": [ "server-1", "server-2" ],
-    "cmd": "cd /my/proj && git pull && npm build && systemctl restart proj",
+    "username": "me",
+    "private_key": "/home/me/.ssh/id_rsa",
+    "working_dir": "/my/proj",
+    "cmds": ["git pull", "npm build", "systemctl restart proj"],
     "branch": "master",
     "secret": "secret"
 }

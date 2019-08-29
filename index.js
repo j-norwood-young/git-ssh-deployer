@@ -1,10 +1,30 @@
 const config = require("config");
-const ssh = require("node-ssh");
+const Node_ssh = require("node-ssh");
 
 const http = require('http');
 
-const handleHook = data => {
+const handleHook = async data => {
     console.log(data);
+    let cmd = config.cmd;
+    if (!Array.isArray(cmd)) cmd = [cmd];
+    ssh = new Node_ssh();
+    for(let host of config.servers) {
+        try {
+            await ssh.connect({
+                host,
+                username: config.username,
+                private_key: config.private_key
+            });
+            for (let cmd of cmds) {
+                console.log(`Running ${ cmd }`);
+                let result = ssh.execCommand(cmd, { cwd: config.working_directory });
+                console.log(result);
+            }
+        } catch(err) {
+            console.error(err);
+        }
+    }
+    
 }
 
 const httpServer = (req, res) => {
