@@ -4,7 +4,7 @@
   "description": "Runs an SSH command on various servers in response to a Github hook to make for easy Git-based deployment",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/.bin/mocha"
   },
   "keywords": [
     "deployment",
@@ -15,5 +15,10 @@
   "dependencies": {
     "config": "^3.2.2",
     "node-ssh": "^6.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0",
+    "nock": "^10.0.6"
   }
 }
