@@ -1,0 +1,19 @@
+{
+  "name": "git-ssh-deployer",
+  "version": "0.0.1",
+  "description": "Runs an SSH command on various servers in response to a Github hook to make for easy Git-based deployment",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "deployment",
+    "git"
+  ],
+  "author": "Jason Norwood-Young",
+  "license": "MIT",
+  "dependencies": {
+    "config": "^3.2.2",
+    "node-ssh": "^6.0.0"
+  }
+}
